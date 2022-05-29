@@ -102,6 +102,7 @@ async function run() {
         const serviceBookings = bookings.filter(book => book.treatment === service.name);
         const bookedSlots = serviceBookings.map(book => book.slot);
         const available = service.slots.filter(slot => !bookedSlots.includes(slot));
+
         service.slots = available;
       });
 
